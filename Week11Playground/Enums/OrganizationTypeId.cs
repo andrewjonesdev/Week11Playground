@@ -1,15 +1,19 @@
-﻿namespace Week11Playground.Enums
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+namespace Week11Playground.Enums
 {
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum OrganizationTypeId
     {
-        Pirate = 0,
-        Marine = 1,
-        Revolutionary = 2,
-        BountyHunter = 3,
-        CipherPol = 4,
-        GodsKnight = 5,
-        Warlord = 6,
-        ElderPlanet = 7,
-        CountryMilitary = 8
+        Pirate,
+        Marine,
+        Revolutionary,
+        BountyHunter,
+        CipherPol,
+        GodsKnight,
+        Warlord,
+        ElderPlanet,
+        CountryMilitary
     }
 }

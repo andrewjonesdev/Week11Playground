@@ -1,0 +1,16 @@
+{
+  "IsEncrypted": false,
+  "ConnectionStrings": {
+    "OnePieceContext": ""
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "Host": {
+    "CORS": "*"
+  }
+}

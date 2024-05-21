@@ -1,8 +1,7 @@
-﻿using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
+﻿using Microsoft.EntityFrameworkCore;
 using Week11Playground.Data.Database.Interfaces;
 using Week11Playground.Models.Entities;
+using Microsoft.EntityFrameworkCore.SqlServer;
 
 namespace Week11Playground.Data.Database
 {
@@ -28,19 +27,37 @@ namespace Week11Playground.Data.Database
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(Startup.GetAppSettings("OnePieceContext"));
-            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Member>()
-                .HasOne<Organization>(m => m.Organization)
-                .WithMany(o => o.Members)
-                .HasForeignKey(m => m.OrganizationId);
+                .Property(m => m.Designation)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<Member>()
+                .Property(m => m.CurrentLocation)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<Member>()
+                .Property(m => m.PlaceOfBirth)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<Organization>()
+                .Property(o => o.OrganizationTypeId)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<Weapon>()
+                .Property(w => w.WeaponGradeId)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<DevilFruit>()
+                .Property(d => d.DevilFruitTypeId)
+                .HasConversion<string>();
+
+            modelBuilder.Entity<Skill>()
+                .Property(s => s.Name)
+                .HasConversion<string>();
 
             modelBuilder.Entity<Member>()
                 .HasOne<Organization>(m => m.Organization)

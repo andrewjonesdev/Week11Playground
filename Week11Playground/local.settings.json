@@ -1,7 +1,6 @@
 {
-
-  "Values": {
-
+  "IsEncrypted": false,
+  "ConnectionStrings": {
     "OnePieceContext": ""
   },
   "Logging": {
@@ -10,5 +9,8 @@
       "Microsoft.AspNetCore": "Warning"
     }
   },
-  "AllowedHosts": "*"
+  "AllowedHosts": "*",
+  "Host": {
+    "CORS": "*"
+  }
 }

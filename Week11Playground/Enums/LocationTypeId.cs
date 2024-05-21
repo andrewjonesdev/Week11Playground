@@ -1,15 +1,19 @@
-﻿namespace Week11Playground.Enums
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+namespace Week11Playground.Enums
 {
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum LocationTypeId
     {
-        NorthBlue = 0,
-        EastBlue = 1,
-        SouthBlue = 2,
-        WestBlue = 3,
-        Paradise = 4,
-        NewWorld = 5,
-        RedLine = 6,
-        CalmBelt = 7
+        NorthBlue,
+        EastBlue,
+        SouthBlue,
+        WestBlue,
+        Paradise,
+        NewWorld,
+        RedLine,
+        CalmBelt
          
     }
 }

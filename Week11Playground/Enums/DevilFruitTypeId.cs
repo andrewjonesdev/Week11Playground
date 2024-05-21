@@ -1,12 +1,16 @@
-﻿namespace Week11Playground.Enums
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+namespace Week11Playground.Enums
 {
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum DevilFruitTypeId
     {
-        Paramecia = 0,
-        SpecialParamecia = 1,
-        Logia = 2,
-        Zoan = 3,
-        AncientZoan = 4,
-        MythicalZoan = 5, 
+        Paramecia,
+        SpecialParamecia,
+        Logia,
+        Zoan,
+        AncientZoan,
+        MythicalZoan, 
     }
 }

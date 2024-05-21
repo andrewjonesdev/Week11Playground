@@ -1,10 +1,14 @@
-﻿namespace Week11Playground.Enums
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+namespace Week11Playground.Enums
 {
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum WeaponGradeId
     {
-        SupremeGrade = 0,
-        GreatGrade = 1,
-        SkillfulGrade = 2,
-        Ungraded = 3
+        SupremeGrade,
+        GreatGrade,
+        SkillfulGrade,
+        Ungraded
     }
 }

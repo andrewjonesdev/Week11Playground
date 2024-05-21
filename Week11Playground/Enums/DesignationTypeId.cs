@@ -1,17 +1,21 @@
-﻿namespace Week11Playground.Enums
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+
+namespace Week11Playground.Enums
 {
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum DesignationTypeId
     {
-        Cook = 0,
-        Shipwright = 1,
-        Musician = 2,
-        Navigator = 3,
-        Doctor = 4,
-        Scientist = 5,
-        Archaeologist = 6,
-        Helmsman = 7,
-        Intel = 9,
-        CabinBoy = 10,
+        Cook,
+        Shipwright      ,
+        Musician,
+        Navigator,
+        Doctor,
+        Scientist,
+        Archaeologist,
+        Helmsman,
+        Intel,
+        CabinBoy,
         Chronicler,
         Blacksmith,
         Tailor,
